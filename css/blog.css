@@ -1,9 +1,10 @@
 body {
-    background-color: #ebceca ;
-  }
-  blog-posts {
-    font-family: 'montserrat',sans-serif ;
-    color: rgb(21, 123, 239);
+    background-color: #ebcbca;
+}
+
+         .blog-posts {
+            font-family: 'montserrat',sans-serif ;
+        color: rgb(243, 170, 25);
         text-align: center;
         
         }
