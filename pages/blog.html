@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="./../css/blog.css">
 </head>
 <body>
+    <div class="image-container">
+        <img src="./../img/blog_img/main img.jpeg" alt="Image" id="image">
+    </div>
+
     <section class="blog-posts">
         <h1>Latest Blog Posts</h1>
         </section>
@@ -98,6 +102,28 @@
         </div>
         
     </div>
+    <script>
+        const image = document.getElementById('image');
+
+window.addEventListener('resize', () => {
+    const windowHeight = window.innerHeight;
+    const windowWidth = window.innerWidth;
+    const imageWidth = image.offsetWidth;
+    const imageHeight = image.offsetHeight;
+
+    if (windowHeight > windowWidth) {
+        image.style.width = '100%';
+        image.style.height = 'auto';
+    } else {
+        image.style.width = 'auto';
+        image.style.height = '100vh';
+    }
+});
+
+// Initial call to center the image
+window.dispatchEvent(new Event('resize'));
+
+    </script>
     </body>
     </html>
     
