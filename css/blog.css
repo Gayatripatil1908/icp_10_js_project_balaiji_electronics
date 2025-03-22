@@ -59,3 +59,17 @@ body {
         .card li {
             margin-bottom: 10px;
         }
+
+        /* Responsive Design */
+
+@media only screen and (max-width: 768px) {
+    .card {
+        width: calc(50% - 40px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
+}
