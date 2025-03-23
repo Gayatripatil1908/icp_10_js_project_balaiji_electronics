@@ -64,7 +64,7 @@ main {
     background: url('hero-image.jpg') no-repeat center center/cover;
     padding: 100px 20px;
     text-align: center;
-    color: #fff;
+    color: #5e0b0b;
 }
 
 .hero h2 {
@@ -158,3 +158,17 @@ footer {
 footer p {
     font-size: 1rem;
 }
+/* ... (rest of the CSS code remains the same) */
+
+.service-card {
+    /* ... (other styles remain the same) */
+    /* Add a new style for the prize class */
+    prize {
+      color: #ff6600;
+      font-weight: bold;
+    }
+  }
+  
+  /* ... (rest of the CSS code remains the same) */
+  
+  

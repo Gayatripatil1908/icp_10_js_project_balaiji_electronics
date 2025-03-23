@@ -37,3 +37,34 @@ function showDetails(service) {
     // Show the service details section
     serviceSection.style.display = 'block';
 }
+// ... (rest of the JavaScript code remains the same)
+
+function showDetails(service) {
+    const serviceDetails = {
+      /* ... (other services remain the same) */
+      'repair-services': {
+        title: 'Repair Services',
+        description: 'Our expert technicians provide repair services for all kinds of electronics, including TVs, laptops, mobile phones, and household appliances. We ensure the job is done right, quickly, and at a competitive price.'
+      },
+      'warranty-support': {
+        title: 'Warranty & Support',
+        description: 'We provide comprehensive warranty and support for all our products. Our dedicated support team is always available to assist you with any queries or issues you may have.'
+      },
+      'installation-services': {
+        title: 'Installation Services',
+        description: 'Our professional installation services ensure that your electronics are installed correctly and functioning perfectly. We offer installation services for all kinds of electronics, including home theaters, security systems, and office equipment.'
+      }
+    };
+  
+    const serviceTitle = document.getElementById('service-title');
+    const serviceDescription = document.getElementById('service-description');
+    const serviceSection = document.getElementById('service-details');
+  
+    serviceTitle.textContent = serviceDetails[service].title;
+    serviceDescription.textContent = serviceDetails[service].description;
+  
+    // Show the service details section
+    serviceSection.style.display = 'block';
+  }
+  
+  // ... (rest of the JavaScript code remains the same)
