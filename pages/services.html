@@ -1,21 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balaiji Electronics Services</title>
+    <title>Our Services | Balaiji Electronics</title>
+    <link rel="stylesheet" href="../css/services.css">
 </head>
+
 <body>
-    <section id="services">
-        <h1>Our Services</h1>
-        <ul>
-          <li>TV Repair</li>
-          <li>AC Repair</li>
-          <li>Refrigerator Repair</li>
-          <li>Washing Machine Repair</li>
-          <li>Laptop Repair</li>
-        </ul>
-      </section>
-  
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Balaiji Electronics Logo" class="logo-img">
+            <h1>Balaiji Electronics</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Electronics Service You Can Trust</h2>
+                <p>Your one-stop solution for all electronics products and services.</p>
+            </div>
+        </section>
+
+        <section class="services-intro">
+            <h2>Our Premium Services</h2>
+            <p>Explore the range of expert services we offer to keep your electronics in top shape.</p>
+        </section>
+
+        <section class="services-list">
+            <div class="service-card" onclick="showDetails('product-sales')">
+                <img src="../img/service1.jpg" alt="Product Sales">
+                <h3>Product Sales</h3>
+                <p>Wide variety of electronics, from home appliances to mobile devices.</p>
+            </div>
+            <div class="service-card" onclick="showDetails('repair-services')">
+                <img src="../img/service2.webp" alt="Repair Services">
+                <h3>Repair & Maintenance</h3>
+                <p>Expert repair services for all kinds of electronics, from TVs to smartphones.</p>
+            </div>
+            <div class="service-card" onclick="showDetails('installation-services')">
+                <img src="../img/service3.webp" alt="Installation Services">
+                <h3>Installation Services</h3>
+                <p>Professional setup for your home and office electronics systems.</p>
+            </div>
+            <div class="service-card" onclick="showDetails('consultation')">
+                <img src="consultation.jpg" alt="Consultation Services">
+                <h3>Consultation & Customization</h3>
+                <p>Tailored solutions to match your unique electronic needs.</p>
+            </div>
+            <div class="service-card" onclick="showDetails('bulk-orders')">
+                <img src="bulk-orders.jpg" alt="Bulk Orders">
+                <h3>Bulk Orders & Corporate Solutions</h3>
+                <p>Affordable bulk pricing for businesses and corporate clients.</p>
+            </div>
+            <div class="service-card" onclick="showDetails('after-sales')">
+                <img src="after-sales.jpg" alt="After-Sales Support">
+                <h3>After-Sales Support</h3>
+                <p>Comprehensive support and warranties for peace of mind.</p>
+            </div>
+        </section>
+
+        <section id="service-details" class="service-details">
+            <h2 id="service-title">Service Details</h2>
+            <p id="service-description"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Balaiji Electronics. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../js/services.js"></script>
 </body>
+
 </html>
