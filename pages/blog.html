@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="image-container">
-        <img src="./../img/blog_img/main img.jpeg" alt="Image" id="image">
+        <img src="./../img/blog_img/big img.jpeg" alt="Image" id="image">
     </div>
 
     <section class="blog-posts">
@@ -16,7 +16,7 @@
         </section>
         <div class="card-container1">
             <div class="card">
-                <img src="product-image1.jpg" alt="Product Image">
+                <img src="product-image1.jpeg" alt="Product Image">
                 <h2>Samsung Galaxy S22</h2>
         <p>6.1-inch Dynamic AMOLED display, up to 16GB RAM, and a long-lasting 4500mAh battery.</p>
         <p>Price: ₹ 80,0000</p>
@@ -102,28 +102,81 @@
         </div>
         
     </div>
-    <script>
-        const image = document.getElementById('image');
+    <div class="social-sharing-buttons-card">
+        <h4>Social Sharing Buttons</h4>
+        <ul id="social-sharing-buttons-list">
+          <!-- Social sharing buttons will be generated dynamically using JavaScript -->
+        </ul>
+      </div>
+      <div class="comments-section">
+       <center><h4>Comments Section</h4></center><br><br>
+        <form id="comments-form">
+          <textarea id="comments-textarea" placeholder="Leave a comment..."></textarea><br><br>
+          <button id="comments-submit-button">Submit</button>
+        </form>
+        <ul class="comments-list" id="comments-list">
+          <!-- Comments will be generated dynamically using JavaScript -->
+        </ul>
+      </div>
+      
+    
+<script>
+const socialSharingButtonsList = document.getElementById('social-sharing-buttons-list');
+const socialSharingButtons = [
+  { text: 'Facebook', href: 'https://www.facebook.com/sharer/sharer.php?u=' },
+  { text: 'Twitter', href: 'https://twitter.com/intent/tweet?url=' },
+  { text: 'LinkedIn', href: 'https://www.linkedin.com/sharing/share?url=' },
+  { text: 'Email', href: 'mailto:?subject=&body=' },
+];
 
-window.addEventListener('resize', () => {
-    const windowHeight = window.innerHeight;
-    const windowWidth = window.innerWidth;
-    const imageWidth = image.offsetWidth;
-    const imageHeight = image.offsetHeight;
-
-    if (windowHeight > windowWidth) {
-        image.style.width = '100%';
-        image.style.height = 'auto';
-    } else {
-        image.style.width = 'auto';
-        image.style.height = '100vh';
-    }
+socialSharingButtons.forEach((button) => {
+  const listItem = document.createElement('li');
+  const linkElement = document.createElement('a');
+  linkElement.textContent = button.text;
+  linkElement.href = button.href;
+  listItem.appendChild(linkElement);
+  socialSharingButtonsList.appendChild(listItem);
 });
 
-// Initial call to center the image
-window.dispatchEvent(new Event('resize'));
+</script>
+<script>
+    const commentsForm = document.getElementById('comments-form');
+const commentsList = document.getElementById('comments-list');
+const commentsTextarea = document.getElementById('comments-textarea');
 
-    </script>
+let comments = [];
+
+commentsForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const commentText = commentsTextarea.value.trim();
+  if (commentText) {
+    const comment = {
+      text: commentText,
+      author: 'Anonymous',
+    };
+    comments.push(comment);
+    commentsTextarea.value = '';
+    renderComments();
+  }
+});
+
+function renderComments() {
+  commentsList.innerHTML = '';
+  comments.forEach((comment, index) => {
+    const listItem = document.createElement('li');
+    const paragraph = document.createElement('p');
+    paragraph.textContent = comment.text;
+    const span = document.createElement('span');
+    span.textContent = `— ${comment.author}`;
+    listItem.appendChild(paragraph);
+    listItem.appendChild(span);
+    commentsList.appendChild(listItem);
+  });
+}
+
+renderComments();
+
+</script>
     </body>
     </html>
     
