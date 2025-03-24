@@ -7,10 +7,14 @@
     <link rel="stylesheet" href="./../css/blog.css">
 </head>
 <body>
-    <div class="image-container">
-        <img src="./../img/blog_img/big img.jpeg" alt="Image" id="image">
+   
+        <button id="start-rain-button">Start Rain</button>
+    
+    <div class="rain-container">
     </div>
-
+    <div class="image-container">
+      <img src="./../img/blog_img/big img.jpeg" alt="Image" id="image">
+    </div>
     <section class="blog-posts">
         <h1>Latest Blog Posts</h1>
         </section>
@@ -102,81 +106,157 @@
         </div>
         
     </div>
-    <div class="social-sharing-buttons-card">
-        <h4>Social Sharing Buttons</h4>
-        <ul id="social-sharing-buttons-list">
-          <!-- Social sharing buttons will be generated dynamically using JavaScript -->
-        </ul>
-      </div>
-      <div class="comments-section">
-       <center><h4>Comments Section</h4></center><br><br>
-        <form id="comments-form">
-          <textarea id="comments-textarea" placeholder="Leave a comment..."></textarea><br><br>
-          <button id="comments-submit-button">Submit</button>
-        </form>
-        <ul class="comments-list" id="comments-list">
-          <!-- Comments will be generated dynamically using JavaScript -->
-        </ul>
-      </div>
-      
     
-<script>
-const socialSharingButtonsList = document.getElementById('social-sharing-buttons-list');
-const socialSharingButtons = [
-  { text: 'Facebook', href: 'https://www.facebook.com/sharer/sharer.php?u=' },
-  { text: 'Twitter', href: 'https://twitter.com/intent/tweet?url=' },
-  { text: 'LinkedIn', href: 'https://www.linkedin.com/sharing/share?url=' },
-  { text: 'Email', href: 'mailto:?subject=&body=' },
-];
-
-socialSharingButtons.forEach((button) => {
-  const listItem = document.createElement('li');
-  const linkElement = document.createElement('a');
-  linkElement.textContent = button.text;
-  linkElement.href = button.href;
-  listItem.appendChild(linkElement);
-  socialSharingButtonsList.appendChild(listItem);
-});
-
-</script>
-<script>
-    const commentsForm = document.getElementById('comments-form');
+    
+      </div>
+      <div class="bottom-section">
+        <div class="comments-section">
+          <h4>Comments</h4>
+          <ul id="comments-list">
+            <!-- Comments will be generated dynamically -->
+          </ul>
+          <form id="comment-form">
+            <input type="text" id="comment-input" placeholder="Leave a comment..."><br><br>
+            <button id="comment-submit">Submit</button>
+          </form>
+        </div>
+        <div class="social-sharing-buttons">
+          <h4>Share</h4>
+          <ul id="social-sharing-list">
+            <li><a href="#" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></li>
+            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
+            <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="newsletter-signup">
+          <h4>Stay Updated!</h4>
+          <form id="newsletter-signup-form">
+            <input type="email" id="email" placeholder="Email Address">
+            <button id="subscribe-button">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="media-section">
+        <h4>Images, Videos, and Infographics</h4>
+        <div class="media-container">
+          <!-- Media will be generated dynamically using JavaScript -->
+        </div>
+      </div>
+      <script>
+        const rainContainer = document.querySelector('.rain-container');
+    const startRainButton = document.getElementById('start-rain-button');
+    
+    function createRaindrop() {
+      const raindrop = document.createElement('div');
+      const randomType = Math.floor(Math.random() * 3) + 1;
+      raindrop.classList.add('raindrop');
+      raindrop.classList.add(`raindrop-${randomType}`);
+      rainContainer.appendChild(raindrop);
+      const randomLeft = Math.floor(Math.random() * 80) + 10;
+      raindrop.style.left = `${randomLeft}%`;
+      raindrop.style.animationDelay = `${Math.floor(Math.random() * 3) + 1}s`;
+    }
+    
+    startRainButton.addEventListener('click', () => {
+      for (let i = 0; i < 50; i++) {
+        createRaindrop();
+      }
+      rainContainer.addEventListener('click', () => {
+        createRaindrop();
+      });
+    });
+      </script>
+      
+      <script>
+        const commentForm = document.getElementById('comment-form');
+const commentInput = document.getElementById('comment-input');
 const commentsList = document.getElementById('comments-list');
-const commentsTextarea = document.getElementById('comments-textarea');
 
-let comments = [];
-
-commentsForm.addEventListener('submit', (e) => {
+commentForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const commentText = commentsTextarea.value.trim();
-  if (commentText) {
-    const comment = {
-      text: commentText,
-      author: 'Anonymous',
-    };
-    comments.push(comment);
-    commentsTextarea.value = '';
-    renderComments();
+  const comment = commentInput.value.trim();
+  if (comment) {
+    const newComment = document.createElement('li');
+    newComment.textContent = comment;
+    commentsList.appendChild(newComment);
+    commentInput.value = '';
   }
 });
 
-function renderComments() {
-  commentsList.innerHTML = '';
-  comments.forEach((comment, index) => {
-    const listItem = document.createElement('li');
-    const paragraph = document.createElement('p');
-    paragraph.textContent = comment.text;
-    const span = document.createElement('span');
-    span.textContent = `— ${comment.author}`;
-    listItem.appendChild(paragraph);
-    listItem.appendChild(span);
-    commentsList.appendChild(listItem);
-  });
-}
+const newsletterSignupForm = document.getElementById('newsletter-signup-form');
+const emailInput = document.getElementById('email');
 
-renderComments();
+newsletterSignupForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const email = emailInput.value.trim();
+  if (email) {
+    // Call API to subscribe user to newsletter
+    console.log('User subscribed to newsletter');
+    emailInput.value = '';
+  }
+});
 
-</script>
+// Social sharing buttons
+const socialSharingButtons = document.getElementById('social-sharing-list');
+const facebookButton = socialSharingButtons.children[0].children[0];
+const twitterButton = socialSharingButtons.children[1].children[0];
+const linkedinButton = socialSharingButtons.children[2].children[0];
+
+facebookButton.addEventListener('click', () => {
+  const url = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent(document.title);
+  const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&t=${title}`;
+  window.open(shareUrl, '_blank');
+});
+
+twitterButton.addEventListener('click', () => {
+  const url = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent(document.title);
+  const shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+  window.open(shareUrl, '_blank');
+});
+linkedinButton.addEventListener('click', () => {
+  const url = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent(document.title);
+  const shareUrl = `https://www.linkedin.com/shareArticle?url=${url}&title=${title}`;
+  window.open(shareUrl, '_blank');
+});
+
+      </script>
+      <script>
+        const mediaContainer = document.querySelector('.media-container');
+const mediaItems = [
+  {
+    type: 'image',
+    src: 'https://via.placeholder.com/300',
+    alt: 'Image 1',
+  },
+  {
+    type: 'video',
+    src: 'https://www.youtube.com/embed/VIDEO_ID',
+    title: 'Video 1',
+  },
+  {
+    type: 'infographic',
+    src: 'https://via.placeholder.com/300',
+    alt: 'Infographic 1',
+  },
+];
+
+mediaItems.forEach((mediaItem) => {
+  const mediaElement = document.createElement(mediaItem.type === 'video' ? 'iframe' : 'img');
+  mediaElement.src = mediaItem.src;
+  mediaElement.alt = mediaItem.alt;
+  mediaElement.title = mediaItem.title;
+  const mediaItemElement = document.createElement('div');
+  mediaItemElement.classList.add('media-item');
+  mediaItemElement.appendChild(mediaElement);
+  mediaContainer.appendChild(mediaItemElement);
+});
+
+      </script>
+    
+
     </body>
     </html>
     
