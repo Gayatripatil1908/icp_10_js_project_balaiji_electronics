@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
     <link rel="stylesheet" href="./../css/blog.css">
+    
 </head>
 <body>
    
@@ -142,121 +143,9 @@
           <!-- Media will be generated dynamically using JavaScript -->
         </div>
       </div>
-      <script>
-        const rainContainer = document.querySelector('.rain-container');
-    const startRainButton = document.getElementById('start-rain-button');
-    
-    function createRaindrop() {
-      const raindrop = document.createElement('div');
-      const randomType = Math.floor(Math.random() * 3) + 1;
-      raindrop.classList.add('raindrop');
-      raindrop.classList.add(`raindrop-${randomType}`);
-      rainContainer.appendChild(raindrop);
-      const randomLeft = Math.floor(Math.random() * 80) + 10;
-      raindrop.style.left = `${randomLeft}%`;
-      raindrop.style.animationDelay = `${Math.floor(Math.random() * 3) + 1}s`;
-    }
-    
-    startRainButton.addEventListener('click', () => {
-      for (let i = 0; i < 50; i++) {
-        createRaindrop();
-      }
-      rainContainer.addEventListener('click', () => {
-        createRaindrop();
-      });
-    });
-      </script>
-      
-      <script>
-        const commentForm = document.getElementById('comment-form');
-const commentInput = document.getElementById('comment-input');
-const commentsList = document.getElementById('comments-list');
-
-commentForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const comment = commentInput.value.trim();
-  if (comment) {
-    const newComment = document.createElement('li');
-    newComment.textContent = comment;
-    commentsList.appendChild(newComment);
-    commentInput.value = '';
-  }
-});
-
-const newsletterSignupForm = document.getElementById('newsletter-signup-form');
-const emailInput = document.getElementById('email');
-
-newsletterSignupForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const email = emailInput.value.trim();
-  if (email) {
-    // Call API to subscribe user to newsletter
-    console.log('User subscribed to newsletter');
-    emailInput.value = '';
-  }
-});
-
-// Social sharing buttons
-const socialSharingButtons = document.getElementById('social-sharing-list');
-const facebookButton = socialSharingButtons.children[0].children[0];
-const twitterButton = socialSharingButtons.children[1].children[0];
-const linkedinButton = socialSharingButtons.children[2].children[0];
-
-facebookButton.addEventListener('click', () => {
-  const url = encodeURIComponent(window.location.href);
-  const title = encodeURIComponent(document.title);
-  const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&t=${title}`;
-  window.open(shareUrl, '_blank');
-});
-
-twitterButton.addEventListener('click', () => {
-  const url = encodeURIComponent(window.location.href);
-  const title = encodeURIComponent(document.title);
-  const shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
-  window.open(shareUrl, '_blank');
-});
-linkedinButton.addEventListener('click', () => {
-  const url = encodeURIComponent(window.location.href);
-  const title = encodeURIComponent(document.title);
-  const shareUrl = `https://www.linkedin.com/shareArticle?url=${url}&title=${title}`;
-  window.open(shareUrl, '_blank');
-});
-
-      </script>
-      <script>
-        const mediaContainer = document.querySelector('.media-container');
-const mediaItems = [
-  {
-    type: 'image',
-    src: 'https://via.placeholder.com/300',
-    alt: 'Image 1',
-  },
-  {
-    type: 'video',
-    src: 'https://www.youtube.com/embed/VIDEO_ID',
-    title: 'Video 1',
-  },
-  {
-    type: 'infographic',
-    src: 'https://via.placeholder.com/300',
-    alt: 'Infographic 1',
-  },
-];
-
-mediaItems.forEach((mediaItem) => {
-  const mediaElement = document.createElement(mediaItem.type === 'video' ? 'iframe' : 'img');
-  mediaElement.src = mediaItem.src;
-  mediaElement.alt = mediaItem.alt;
-  mediaElement.title = mediaItem.title;
-  const mediaItemElement = document.createElement('div');
-  mediaItemElement.classList.add('media-item');
-  mediaItemElement.appendChild(mediaElement);
-  mediaContainer.appendChild(mediaItemElement);
-});
-
-      </script>
-    
-
-    </body>
+      <script src="./../js/blog.js/raindrop.js"></script>
+      <script src="./../js/blog.js/social.js"></script>
+      <script src="./../js/blog.js/video.js"></script>
+      </body>
     </html>
     
