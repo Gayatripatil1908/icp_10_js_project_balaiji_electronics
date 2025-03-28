@@ -55,12 +55,12 @@
 
     <div class="navbar-brands">
         <ul>
-            <li class="tab active" data-target="s25-ultra">Sony</li>
-            <li class="tab" data-target="s25-plus">Samsung</li>
-            <li class="tab" data-target="s25-series">LG</li>
-            <li class="tab" data-target="tab-s10">Bajaj Electricals</li>
-            <li class="tab" data-target="watch-ultra">Panasonic</li>
-            <li class="tab" data-target="watch-ultra">Havells</li>
+            <li class="tab active" onclick="changeTab(0)">Sony</li>
+            <li class="tab" onclick="changeTab(1)">Samsung</li>
+            <li class="tab" onclick="changeTab(2)">LG</li>
+            <li class="tab" onclick="changeTab(3)">Bajaj</li>
+            <li class="tab" onclick="changeTab(4)">Panasonic</li>
+            <li class="tab" onclick="changeTab(5)">Havells</li>
           
         </ul>
     </div>
@@ -194,7 +194,7 @@
     </div>
 
 
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", () => {
             const tabs = document.querySelectorAll(".tab");
             const slider = document.querySelector(".slider");
@@ -210,7 +210,27 @@
                 });
             });
         });
+    </script> -->
+
+
+    <script>
+        function changeTab(index) {
+            var tabs = document.getElementsByClassName("tab");
+            var slider = document.querySelector(".slider");
+    
+            // Remove "active" class from all tabs
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+    
+            // Add "active" class to the clicked tab
+            tabs[index].classList.add("active");
+    
+            // Move slider to the corresponding section
+            slider.style.transform = "translateX(-" + (index * 100) + "vw)";
+        }
     </script>
+    
     
    
 
