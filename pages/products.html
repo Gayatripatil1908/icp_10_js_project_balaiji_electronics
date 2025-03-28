@@ -210,6 +210,45 @@ nav ul li a:hover {
   { name: "Philips Air Fryer", category: "Home Appliances", price: "₹3,430", images: ["https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTtGiGW0bC4JuFlauM2c5lzBD8pqDiiS55HSJujU_xueBrcTdlooY3ZgIfDy9k082IyxORYMOT9M-Ekw4jhCp464xT3CiI9176WyUmnESO5iWHo7Wcf15JU"], description: "Healthy cooking with 90% less oil and rapid air technology." },
   { name: "Samsung Refrigerator", category: "Home Appliances", price: "₹25,290", images: ["https://images.samsung.com/is/image/samsung/p6pim/in/rt28c3922cr-hl/gallery/in-ref-tmf-rt3000-449401-rt28c3922cr-hl-541366002?$684_547_PNG$"], description: "Smart fridge with AI-powered cooling and large storage." }
 ];
+function displayProducts(category) {
+  // Manually map categories to correct container IDs
+  const categoryMap = {
+    "Televisions": "televisionsContainer",
+    "Smartphones": "smartphonesContainer",
+    "Laptops": "laptopsContainer",
+    "Accessories": "accessoriesContainer",
+    "Home Appliances": "homeappliancesContainer"
+  };
+  const containerId = categoryMap[category];
+  if (!containerId) return; // If no container found, exit function
+
+  const container = document.getElementById(containerId);
+  if (!container) return; // Exit if container is missing
+
+  container.innerHTML = ""; // Clear existing products
+
+  products.filter(product => product.category === category).forEach(product => {
+    const productCard = document.createElement("div");
+    productCard.classList.add("product-card");
+
+    productCard.innerHTML = `
+      <img src="${product.images[0]}" alt="${product.name}">
+      <h3>${product.name}</h3>
+      <p>${product.description}</p>
+      <div class="price">${product.price}</div>
+      <div class="button-container">
+        <button class="preview-btn">Preview</button>
+        <button class="cart-btn">Add to Cart</button>
+      </div>
+    `;
+
+    // Attach event listeners
+    productCard.querySelector(".preview-btn").addEventListener("click", () => previewProduct(product.name));
+    productCard.querySelector(".cart-btn").addEventListener("click", () => addToCart(product.name));
+
+    container.appendChild(productCard);
+  });
+}
 </script>
 </div>
 </body>
