@@ -79,6 +79,52 @@
         p a:hover {
             text-decoration: underline;
         }
+
+        @media (max-width: 768px) {
+            body {
+                height: auto;
+                padding: 50px 20px;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .title {
+                font-size: 1.6rem;
+            }
+
+            .input-div input {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                max-width: 90%;
+                padding: 1.5rem;
+            }
+
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .input-div input {
+                font-size: 0.85rem;
+                padding: 10px;
+            }
+
+            .btn {
+                font-size: 0.85rem;
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 
