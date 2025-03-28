@@ -182,6 +182,35 @@ nav ul li a:hover {
       <button onclick="goBack()" style="background-color: #ff5722; margin-top: 10px;">Go Back</button>
     </div>
   </div>
+  <script>
+    // Sample product data
+    const products = [
+  // Televisions
+  { name: "LG OLED TV", category: "Televisions", price: "₹43,990", images: ["https://www.lg.com/content/dam/channel/wcms/in/images/tvs/offers/gallery/new/OLED55C46LA-2010x1334.jpg/_jcr_content/renditions/thum-1600x1062.jpeg"], description: "High-quality OLED display with 4K support." },
+  { name: "Samsung QLED TV", category: "Televisions", price: "₹74,990", images: ["https://images.samsung.com/is/image/samsung/p6pim/in/qa55q70daulxl/gallery/in-qled-q70d-qa55q70daulxl-539990475?$684_547_JPG$"], description: "Stunning QLED visuals with vibrant colors and contrast." },
+  { name: "Sony Bravia 4K", category: "Televisions", price: "₹64,999", images: ["https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcScUnIP698OUAxevWWQ6ciXmG3LeZL5HuC1_pSJQVKnmrjm66XLc-Hbw7kCxve7SU93v3tc5U9FXtx_G4AP1ey2CL4x1fbCKpEnDT_JjgYnRPGlG9eudLZVSQ"], description: "Smart TV with immersive sound and 4K clarity." },
+
+  // Mobile Phones
+  { name: "iPhone 14", category: "Smartphones", price: "₹62,999", images: ["https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTkImbdHNnyAqCbS5usbvBWrTuDXePeMWqK-Y9e7NmGEDtk4-m_w5k9vOh_mbDqjN3gyShIeJblQSglJLnhAmt5XDR5pLpfciGsx0fko8Ml5ZAksHZ53I_gHw"], description: "Latest iPhone model with advanced features." },
+  { name: "Samsung Galaxy S21", category: "Smartphones", price: "₹26,099", images: ["https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS9XMvXgPAp9DfrYKagqEYO5mug0NgyhBihlYx9vKlHcxfQVnxDMM9lfsN0AiiKhz2fpzAWv57LivJI4A7DWYXtUG_IOifQX3f_xOG2W_KHbc63l6Dn0Ctb_g"], description: "Powerful performance and stunning design." },
+  { name: "OnePlus 11", category: "Smartphones", price: "₹31,900", images: ["https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS7ngoz2ynA7W87Xd_VUGZSDCM9zXNZxeFSq90AUHRCy8MThm66A89JobJ799k4ZT21OiuNm-MoCXm8lJjRNzvP2c4jcTqcr_1617nhuiGCu8IdIXnSbY3A"], description: "Flagship device with smooth UI and fast charging." },
+
+  // Laptops & Computers
+  { name: "MacBook Pro", category: "Laptops", price: "₹1,12,000", images: ["https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSd5IgKxgvqqxHgkc6qaIxJf8JJDPSKDOwbmMKKr6d8PGNuCbnfjF19Mz8KgrbdcHWUmDppw1cFlh7rb_w4Hydus7_4iRm0yECGXucZTOdDxP_8sHv_KGkhCQ"], description: "M2 chip with high-speed performance and retina display." },
+  { name: "Dell XPS 15", category: "Laptops", price: "₹59,990", images: ["https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQgYCoF7IvY07CBEFbCHImYl9Y0rc6erzt4xsXzBqYFJXYeSjujQnay6kzw3nShQL1Fd8cMiAdEjBM02f2ea85fP5YXc5o_f2g2o3tNbh9mOlueQXpg1CFInQ"], description: "Sleek design with powerful Intel i9 processor." },
+  { name: "HP Spectre x360", category: "Laptops", price: "₹1,73,000", images: ["https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQZjm8e5SX1_7WGBX7TQyfI5kDFM3ysBtSIpwvfLFVfJsBAwPAYTJRkgp717riUGDuQhWse22d-8IUr8T7ZsjjT9U5OwMJu-tuUtaXzS9BhpPw8xCHsDMFLzg"], description: "Convertible laptop with touch display and long battery life." },
+
+  // Accessories (Headphones, Speakers)
+  { name: "Sony WH-1000XM5", category: "Accessories", price: "₹20,900", images: ["https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSi_JAR_nmdfjcskWm_XIh-kpPfCXmnppBOj39V9GR1nVuSY5riixubK4ZaQQFxhjfPYDQxgWk3ijHSdVzu610lj0kxjqSjgCGjtbj3xnqF9zs7x9YZ7T3iiPA"], description: "Noise-canceling wireless headphones with crystal-clear audio." },
+  { name: "JBL Flip 6", category: "Accessories", price: "₹9,899", images: ["https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTodaqA_4o6LWGXTc03s-tebVhJyuiKliToV0Kzj8-PTeeBc55d3i42dyy9Y2A53_3so2ctfS0yfM3K8ei2wqQM1g2RR0TsCg4RMTqAzdIDArPbOMTrfl7oM_o"], description: "Portable Bluetooth speaker with deep bass." },
+  { name: "Apple AirPods Pro", category: "Accessories", price: "₹12,900", images: ["https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTM02DroFmxBUZLa4mVf6ZvL9gV9MFo2qXP3WHkNinTIy78D6hNrHwmOEYtpjLvAaigqgprltHHhcgwOyly5AkP-XkLUXdWIp3lWPYqYlaihBzGh_UnXneYnN8"], description: "Premium in-ear wireless earbuds with active noise cancellation." },
+
+  // Home Appliances
+  { name: "Dyson Vacuum Cleaner", category: "Home Appliances", price: "₹23,171", images: ["https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTI1Y3F-dtWkBBJccoYsgEz8gyEdjzjAE0k5f4ZLvEli1FhlxwbbXkCkpiUhHvuOt4SF4IWGUBkE-Lmmq-4inuSIfPptdiKS9w9_fqmpWaE"], description: "Powerful cordless vacuum cleaner with smart suction." },
+  { name: "Philips Air Fryer", category: "Home Appliances", price: "₹3,430", images: ["https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTtGiGW0bC4JuFlauM2c5lzBD8pqDiiS55HSJujU_xueBrcTdlooY3ZgIfDy9k082IyxORYMOT9M-Ekw4jhCp464xT3CiI9176WyUmnESO5iWHo7Wcf15JU"], description: "Healthy cooking with 90% less oil and rapid air technology." },
+  { name: "Samsung Refrigerator", category: "Home Appliances", price: "₹25,290", images: ["https://images.samsung.com/is/image/samsung/p6pim/in/rt28c3922cr-hl/gallery/in-ref-tmf-rt3000-449401-rt28c3922cr-hl-541366002?$684_547_PNG$"], description: "Smart fridge with AI-powered cooling and large storage." }
+];
+</script>
 </div>
 </body>
 </html>
