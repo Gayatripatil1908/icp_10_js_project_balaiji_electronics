@@ -312,3 +312,24 @@ body {
     width: 100%;
     overflow: hidden;
   }
+
+  .marquee-container {
+    overflow: hidden;
+    width: 80%;
+    padding: 20px 0;
+    max-width: 1200px; 
+    margin: 0 auto;
+  }
+  
+  .marquee-content {
+    display: flex;
+    gap: 60px;
+    width: max-content;
+    animation: marquee-scroll 100s linear infinite;
+  }
+  
+  .marquee-content img {
+    height: 60px;
+    opacity: 0.8;
+    
+  }
