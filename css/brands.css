@@ -24,3 +24,13 @@ body {
     animation-range: entry 0% cover 40%;
     
   }
+
+  .list .item .content{
+    position: absolute;
+    top: 40%;
+    left: 70px;
+    transform: translateY(-50%);
+    width: 400px;
+    text-align: left;
+    color: black;
+} 
