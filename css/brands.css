@@ -333,3 +333,24 @@ body {
     opacity: 0.8;
     
   }
+
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+  
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  
+  .shadow {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: clamp(91px, 26%, 249px);
+    z-index: 2;
+    pointer-events: none;
+    filter: blur(8px); 
+  }
