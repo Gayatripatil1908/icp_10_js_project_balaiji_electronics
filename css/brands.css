@@ -112,3 +112,11 @@ body {
     color: #fff;
     border-color: #14ff72cb;
 }
+.bg-image {
+    background-image: url('https://www.lg.com/content/dam/channel/wcms/in/promotions/banners/2025/march/ugadi-festive-sale-dz.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 100%; 
+}
