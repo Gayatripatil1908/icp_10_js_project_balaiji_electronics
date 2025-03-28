@@ -263,6 +263,62 @@
 
     <script>
         src = "https://kit.fontawesome.com/a81368914c.js"
+
+        const inputs = document.querySelectorAll(".input");
+
+
+        function addcl() {
+            let parent = this.parentNode.parentNode;
+            parent.classList.add("focus");
+        }
+
+        function remcl() {
+            let parent = this.parentNode.parentNode;
+            if (this.value == "") {
+                parent.classList.remove("focus");
+            }
+        }
+
+
+        inputs.forEach(input => {
+            input.addEventListener("focus", addcl);
+            input.addEventListener("blur", remcl);
+        });
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const usernameInput = document.querySelector(".input-div.one .input");
+            const passwordInput = document.querySelector(".input-div.pass .input");
+            const loginForm = document.querySelector("form");
+
+            // Autofill username if stored
+            if (localStorage.getItem("username")) {
+                usernameInput.value = localStorage.getItem("username");
+            }
+
+            loginForm.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent form submission
+
+                const username = usernameInput.value.trim();
+                const password = passwordInput.value.trim();
+
+                if (username === "" || password === "") {
+                    alert("Please enter both username and password.");
+                    return;
+                }
+
+                // Store username and password in localStorage (for demo purposes only)
+                localStorage.setItem("username", username);
+                localStorage.setItem("password", password);
+
+                alert("Login successful!"); // Simulate login success
+                window.location.href = "index.html"; // Redirect to homepage
+            });
+        });
+
+
+
     </script>
 
 </body>

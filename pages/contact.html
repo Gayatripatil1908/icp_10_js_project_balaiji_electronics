@@ -450,6 +450,89 @@
 
     <script>
 
+        const inputs = document.querySelectorAll(".input");
+
+        function focusFunc() {
+            let parent = this.parentNode;
+            parent.classList.add("focus");
+        }
+
+        function blurFunc() {
+            let parent = this.parentNode;
+            if (this.value == "") {
+                parent.classList.remove("focus");
+            }
+        }
+
+        inputs.forEach((input) => {
+            input.addEventListener("focus", focusFunc);
+            input.addEventListener("blur", blurFunc);
+        });
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            const nameInput = document.querySelector("input[name='name']");
+            const emailInput = document.querySelector("input[name='email']");
+            const phoneInput = document.querySelector("input[name='phone']");
+            const messageInput = document.querySelector("textarea[name='message']");
+
+            // Load saved data from localStorage
+            if (localStorage.getItem("name")) nameInput.value = localStorage.getItem("name");
+            if (localStorage.getItem("email")) emailInput.value = localStorage.getItem("email");
+            if (localStorage.getItem("phone")) phoneInput.value = localStorage.getItem("phone");
+            if (localStorage.getItem("message")) messageInput.value = localStorage.getItem("message");
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent actual form submission
+
+                const name = nameInput.value.trim();
+                const email = emailInput.value.trim();
+                const phone = phoneInput.value.trim();
+                const message = messageInput.value.trim();
+
+                // Validation
+                if (!name || !email || !phone || !message) {
+                    alert("Please fill out all fields.");
+                    return;
+                }
+
+                if (!validateEmail(email)) {
+                    alert("Please enter a valid email address.");
+                    return;
+                }
+
+                if (!validatePhone(phone)) {
+                    alert("Please enter a valid 10-digit phone number.");
+                    return;
+                }
+
+                // Save form data to localStorage
+                localStorage.setItem("name", name);
+                localStorage.setItem("email", email);
+                localStorage.setItem("phone", phone);
+                localStorage.setItem("message", message);
+
+                alert("Your message has been sent successfully! 🚀");
+                form.reset(); // Clear the form fields
+            });
+
+            // Email validation function
+            function validateEmail(email) {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailPattern.test(email);
+            }
+
+            // Phone number validation function (should be 10 digits)
+            function validatePhone(phone) {
+                const phonePattern = /^\d{10}$/;
+                return phonePattern.test(phone);
+            }
+        });
+
+
     </script>
 </body>
 
