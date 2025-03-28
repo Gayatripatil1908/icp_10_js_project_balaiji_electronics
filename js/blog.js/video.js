@@ -1,5 +1,5 @@
+const mediaContainer = document.querySelector('.media-container');
 
-        const mediaContainer = document.querySelector('.media-container');
 const mediaItems = [
   {
     type: 'image',
@@ -23,10 +23,9 @@ mediaItems.forEach((mediaItem) => {
   mediaElement.src = mediaItem.src;
   mediaElement.alt = mediaItem.alt;
   mediaElement.title = mediaItem.title;
+
   const mediaItemElement = document.createElement('div');
   mediaItemElement.classList.add('media-item');
   mediaItemElement.appendChild(mediaElement);
   mediaContainer.appendChild(mediaItemElement);
 });
-
-      
