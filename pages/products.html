@@ -290,6 +290,13 @@ function addToCart(productName) {
   alert(productName + " added to cart!");
   console.log(productName + " added to cart!"); // Debugging
 }
+window.onload = () => {
+  displayProducts("Televisions");
+  displayProducts("Smartphones");
+  displayProducts("Laptops");
+  displayProducts("Accessories");
+  displayProducts("Home Appliances"); // This should now work
+};
 </script>
 </div>
 </body>
