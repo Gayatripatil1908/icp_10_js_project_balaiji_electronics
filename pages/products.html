@@ -249,6 +249,20 @@ function displayProducts(category) {
     container.appendChild(productCard);
   });
 }
+let cart = [];
+
+function addToCartFromPreview() {
+  const productName = document.getElementById("previewName").textContent;
+  const product = products.find(p => p.name === productName);
+  
+  if (product) {
+    cart.push(product); // Add the product to the cart
+    console.log(product.name + " added to cart from preview!");
+    alert(product.name + " added to cart!"); // Show a confirmation message to the user
+  } else {
+    console.error("Product not found:", productName); // Debugging if product not found
+  }
+}
 </script>
 </div>
 </body>
