@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
         * {
             margin: 0;
             padding: 0;
@@ -19,6 +20,7 @@
         textarea {
             font-family: "Poppins", sans-serif;
         }
+
         .container {
             position: relative;
             width: 100%;
@@ -73,7 +75,7 @@
             position: absolute;
             width: 26px;
             height: 26px;
-            background-color:#bb33ff;
+            background-color: #bb33ff;
             transform: rotate(45deg);
             top: 50px;
             left: -13px;
@@ -87,12 +89,12 @@
         }
 
         .title {
-            
+
             font-weight: 500;
             font-size: 1.5rem;
             line-height: 1;
             margin-bottom: 0.7rem;
-            color:#bb33ff ;
+            color: #bb33ff;
         }
 
         .input-container {
@@ -250,7 +252,7 @@
             width: 35px;
             height: 35px;
             border-radius: 5px;
-           
+
             color: #fff;
             text-align: center;
             line-height: 35px;
@@ -262,9 +264,9 @@
             transform: scale(1.05);
         }
 
-       
 
-       
+
+
 
         .square {
             position: absolute;
@@ -274,24 +276,110 @@
             transform: translate(181%, 11%);
             opacity: 0.2;
         }
-        .social-icons{
+
+        .social-icons {
             height: 30px;
         }
-        
 
+        @media (max-width: 850px) {
+            .form {
+                grid-template-columns: 1fr;
+            }
 
+            .contact-info:before {
+                bottom: initial;
+                top: -75px;
+                right: 65px;
+                transform: scale(0.95);
+            }
+
+            .contact-form:before {
+                top: -13px;
+                left: initial;
+                right: 70px;
+            }
+
+            .square {
+                transform: translate(140%, 43%);
+                height: 350px;
+            }
+
+            .big-circle {
+                bottom: 75%;
+                transform: scale(0.9) translate(-40%, 30%);
+                right: 50%;
+            }
+
+            .text {
+                margin: 1rem 0 1.5rem 0;
+            }
+
+            .social-media {
+                padding: 1.5rem 0 0 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .contact-info:before {
+                display: none;
+            }
+
+            .square,
+            .big-circle {
+                display: none;
+            }
+
+            form,
+            .contact-info {
+                padding: 1.7rem 1.6rem;
+            }
+
+            .text,
+            .information,
+            .social-media p {
+                font-size: 0.8rem;
+            }
+
+            .title {
+                font-size: 1.15rem;
+            }
+
+            .social-icons a {
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+            }
+
+            .icon {
+                width: 23px;
+            }
+
+            .input {
+                padding: 0.45rem 1.2rem;
+            }
+
+            .btn {
+                padding: 0.45rem 1.2rem;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        
+
         <img src="img/shape.png" class="square" alt="" />
         <div class="form">
             <div class="contact-info">
                 <h3 class="title">Let's get in touch</h3>
                 <p class="text">
-                    Explore a wide range of electronics, from the latest smartphones and laptops to home appliances and accessories. Shop with confidence and enjoy the best deals, top brands, and seamless online shopping at Balaji Electronics! 🚀✨
+                    Explore a wide range of electronics, from the latest smartphones and laptops to home appliances and
+                    accessories. Shop with confidence and enjoy the best deals, top brands, and seamless online shopping
+                    at Balaji Electronics! 🚀✨
                 </p>
 
                 <div class="info">
@@ -361,7 +449,90 @@
     </div>
 
     <script>
-        
+
+        const inputs = document.querySelectorAll(".input");
+
+        function focusFunc() {
+            let parent = this.parentNode;
+            parent.classList.add("focus");
+        }
+
+        function blurFunc() {
+            let parent = this.parentNode;
+            if (this.value == "") {
+                parent.classList.remove("focus");
+            }
+        }
+
+        inputs.forEach((input) => {
+            input.addEventListener("focus", focusFunc);
+            input.addEventListener("blur", blurFunc);
+        });
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            const nameInput = document.querySelector("input[name='name']");
+            const emailInput = document.querySelector("input[name='email']");
+            const phoneInput = document.querySelector("input[name='phone']");
+            const messageInput = document.querySelector("textarea[name='message']");
+
+            // Load saved data from localStorage
+            if (localStorage.getItem("name")) nameInput.value = localStorage.getItem("name");
+            if (localStorage.getItem("email")) emailInput.value = localStorage.getItem("email");
+            if (localStorage.getItem("phone")) phoneInput.value = localStorage.getItem("phone");
+            if (localStorage.getItem("message")) messageInput.value = localStorage.getItem("message");
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent actual form submission
+
+                const name = nameInput.value.trim();
+                const email = emailInput.value.trim();
+                const phone = phoneInput.value.trim();
+                const message = messageInput.value.trim();
+
+                // Validation
+                if (!name || !email || !phone || !message) {
+                    alert("Please fill out all fields.");
+                    return;
+                }
+
+                if (!validateEmail(email)) {
+                    alert("Please enter a valid email address.");
+                    return;
+                }
+
+                if (!validatePhone(phone)) {
+                    alert("Please enter a valid 10-digit phone number.");
+                    return;
+                }
+
+                // Save form data to localStorage
+                localStorage.setItem("name", name);
+                localStorage.setItem("email", email);
+                localStorage.setItem("phone", phone);
+                localStorage.setItem("message", message);
+
+                alert("Your message has been sent successfully! 🚀");
+                form.reset(); // Clear the form fields
+            });
+
+            // Email validation function
+            function validateEmail(email) {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailPattern.test(email);
+            }
+
+            // Phone number validation function (should be 10 digits)
+            function validatePhone(phone) {
+                const phonePattern = /^\d{10}$/;
+                return phonePattern.test(phone);
+            }
+        });
+
+
     </script>
 </body>
 
