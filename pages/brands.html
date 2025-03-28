@@ -194,23 +194,7 @@
     </div>
 
 
-    <!-- <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const tabs = document.querySelectorAll(".tab");
-            const slider = document.querySelector(".slider");
 
-            tabs.forEach((tab, index) => {
-                tab.addEventListener("click", () => {
-                    // Remove active class from all tabs
-                    tabs.forEach(t => t.classList.remove("active"));
-                    tab.classList.add("active");
-
-                    // Move slider to corresponding section
-                    slider.style.transform = `translateX(-${index * 100}vw)`;
-                });
-            });
-        });
-    </script> -->
 
 
     <script>
@@ -218,12 +202,12 @@
             var tabs = document.getElementsByClassName("tab");
             var slider = document.querySelector(".slider");
     
-            // Remove "active" class from all tabs
+            // Remove
             for (var i = 0; i < tabs.length; i++) {
                 tabs[i].classList.remove("active");
             }
     
-            // Add "active" class to the clicked tab
+            // Add 
             tabs[index].classList.add("active");
     
             // Move slider to the corresponding section
