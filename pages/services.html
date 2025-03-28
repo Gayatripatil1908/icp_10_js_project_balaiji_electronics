@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Balaiji Electronics</title>
+    <link rel="stylesheet" href="../css/services.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pages/products.html">Products</a></li>
+                <li><a href="pages/bestsellers.html">Best Sellers</a></li>
+                <li><a href="pages/brands.html">Brands</a></li>
+                <li><a href="pages/offers.html">Offers</a></li>
+                <li><a href="pages/services.html">Services</a></li>
+                <li><a href="pages/about.html">About</a></li>
+                <li><a href="pages/blog.html">Blog</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+                <li><a href="pages/login.html">Login</a></li>
+                <li><a href="pages/signup.html">Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Electronics Service You Can Trust</h2>
+                <p>Your one-stop solution for all electronics products and services.</p>
+            </div>
+        </section>
+        <section class="services-list">
+            <!-- ... (other service cards remain the same) -->
+            <div class="service-card" onclick="showDetails('repair-services')">
+              <img src="../img/serives8.jpg" alt="Repair Services">
+              <h3>Repair Services</h3>
+              <p>Expert repair services for all kinds of electronics.</p>
+            </div>
+            <div class="service-card" onclick="showDetails('warranty-support')">
+              <img src="../img/serives11.webp" alt="Warranty & Support">
+              <h3 prize">Warranty & Support</h3>
+              <p>Comprehensive warranty and support for all our products.</p>
+            </div>
+          </section>          
+
+        <section class="services-intro">
+            <h1>Our Premium Services</h1>
+            <p>Explore the range of expert services we offer to keep your electronics in top shape.</p>
+        </section>
+
+        <section class="services-list">
+            <div class="service-card" onclick="showDetails('product-sales')">
+                <img src="../img/service1.jpg" alt="Product Sales">
+                <h3>Product Sales</h3>
+                <p>Wide variety of electronics, from home appliances to mobile devices.</p>
+            </div>
+            <div class="service-card" onclick="showDetails('repair-services')">
+                <img src="../img/service2.webp" alt="Repair Services">
+                <h3>Repair & Maintenance</h3>
+                <p>Expert repair services for all kinds of electronics, from TVs to smartphones.</p>
+            </div>
+            <div class="service-card" onclick="showDetails('installation-services')">
+                <img src="../img/service3.webp" alt="Installation Services">
+                <h3>Installation Services</h3>
+                <p>Professional setup for your home and office electronics systems.</p>
+            </div>
+            <div class="service-card" onclick="showDetails('consultation')">
+                <img src="../img/service4.jpg" alt="Consultation Services">
+                <h3>Consultation & Customization</h3>
+                <p>Tailored solutions to match your unique electronic needs.</p>
+            </div>
+            <div class="service-card" onclick="showDetails('bulk-orders')">
+                <img src="../img/service5.avif" alt="Bulk Orders">
+                <h3>Bulk Orders & Corporate Solutions</h3>
+                <p>Affordable bulk pricing for businesses and corporate clients.</p>
+            </div>
+            <div class="service-card" onclick="showDetails('after-sales')">
+                <img src="../img/serives6.jpg" alt="After-Sales Support">
+                <h3>After-Sales Support</h3>
+                <p>Comprehensive support and warranties for peace of mind.</p>
+            </div>
+        </section>
+
+        <section id="service-details" class="service-details">
+            <h2 id="service-title">Service Details</h2>
+            <p id="service-description"></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Email: <a href="mailto:balaijielectronics@gmail.com">balaijielectronics@gmail.com</a></p>
+            <p>Phone: <a href="tel:+919503710992">9503710992</a></p>
+            <p>Location: Ap Mirajgaon, Tal Karjat, Dist Ahilyanagar, Pincode: 414202 <a href="https://goo.gl/maps/XYZ" target="_blank"><i class="fas fa-map-marker-alt"></i></a></p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/services.js"></script>
+</body>
+
+</html>
