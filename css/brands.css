@@ -91,3 +91,18 @@ body {
         filter: blur(0);
     }
 }
+
+.content .btn button{
+    padding: 10px 20px;
+   border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    background-color: black;
+    border: 2px solid #fff;
+
+}
+.content .btn button:hover{
+    border: 2px solid rgb(254, 2, 2);
+}
