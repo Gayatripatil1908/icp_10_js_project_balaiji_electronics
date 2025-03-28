@@ -303,3 +303,12 @@ body {
     border: none;
   
 }
+
+/* marquee */
+
+
+.marquee-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
