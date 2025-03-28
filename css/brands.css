@@ -229,3 +229,77 @@ body {
     background: white;
     color: black;
 }
+
+/* Slider */
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    width: 616%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.images-content{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.navbar-brands-container{
+    width: 80%;
+ 
+}
+
+.sony{
+    display: block;
+    width: 500px;
+
+    justify-content: center;
+    
+}
+.panasonic{
+    display: block;
+    width: 400px;
+    height: 285px;
+    
+    justify-content: center;
+
+}
+.slider-btn{
+
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    background-color: black;
+    border: 2px solid #fff;
+    width: fit-content;
+    margin: 10px auto;
+  
+
+}
+
+
+
+.slider-btn:hover{
+    background-color: rgb(41, 41, 41);
+    border: none;
+  
+}
