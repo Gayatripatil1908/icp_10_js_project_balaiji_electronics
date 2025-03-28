@@ -263,6 +263,10 @@ function addToCartFromPreview() {
     console.error("Product not found:", productName); // Debugging if product not found
   }
 }
+function goBack() {
+  const previewSection = document.getElementById("productPreview");
+  previewSection.style.display = "none";  // Hides the product preview section
+}
 </script>
 </div>
 </body>
