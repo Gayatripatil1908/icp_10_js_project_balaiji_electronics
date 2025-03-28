@@ -267,6 +267,25 @@ function goBack() {
   const previewSection = document.getElementById("productPreview");
   previewSection.style.display = "none";  // Hides the product preview section
 }
+function previewProduct(productName) {
+  const product = products.find(p => p.name === productName);
+  if (product) {
+    console.log("Previewing:", product.name); // Debugging
+
+    document.getElementById("previewImage").src = product.images[0];
+    document.getElementById("previewName").textContent = product.name;
+    document.getElementById("previewDescription").textContent = product.description;
+    document.getElementById("previewPrice").textContent = product.price;
+
+    // Ensure visibility
+    const previewSection = document.getElementById("productPreview");
+    previewSection.style.display = "block";
+    previewSection.style.visibility = "visible"; // Ensures it's shown
+    previewSection.scrollIntoView({ behavior: "smooth" }); // Scroll to preview
+  } else {
+    console.error("Product not found:", productName);
+  }
+}
 </script>
 </div>
 </body>
