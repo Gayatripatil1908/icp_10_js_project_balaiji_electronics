@@ -184,3 +184,15 @@ body {
         width: 400px;
     }
 }
+
+.main-heading{
+    position: relative;
+    text-align: center;
+    font-size: 41px;
+    top: 17px;
+    margin-bottom: 41px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-decoration: underline ;
+  
+}
