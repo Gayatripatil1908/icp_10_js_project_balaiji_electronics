@@ -106,3 +106,9 @@ body {
 .content .btn button:hover{
     border: 2px solid rgb(254, 2, 2);
 }
+
+.content .btn button:nth-child(2):hover{
+    background-color: #14ff72cb;
+    color: #fff;
+    border-color: #14ff72cb;
+}
