@@ -354,3 +354,18 @@ body {
     pointer-events: none;
     filter: blur(8px); 
   }
+
+  .left-shadow {
+    left: 88px;
+    background: linear-gradient(to right, rgb(255 255 255) 0%, rgb(255 255 255 / 0%) 100%);
+    box-shadow: -10px 0 20px rgb(255 255 255 / 50%);
+    filter: blur(13px);
+}
+
+
+.right-shadow {
+    right: 19px;
+    background: linear-gradient(to right, rgb(255 255 255) 0%, rgb(255 255 255 / 0%) 100%);
+    box-shadow: -10px 0 20px rgb(255 255 255 / 50%);
+    filter: blur(13px);
+}
