@@ -73,15 +73,15 @@ nav ul li a:hover {
 }
 
 .raindrop-1 {
-  background-image: url('./blog_img/airpods.png');
+  background-image: url('./../img/blog_img/airpods.png');
 }
 
 .raindrop-2 {
-  background-image: url('./blog_img/watch.png');
+  background-image: url('./../img/blog_img/laptop.png');
 }
 
 .raindrop-3 {
-  background-image: url('./blog_img/smartphone.png')
+  background-image: url('./../img/blog_img/smartwatch.png')
 }
 
 @keyframes rain {
