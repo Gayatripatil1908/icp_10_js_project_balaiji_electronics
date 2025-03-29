@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offers Page</title>
+    <link rel="stylesheet" href="../css/offers.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./bestsellers.html">Best Sellers</a></li>
+          <li><a href="./brands.html">Brands</a></li>
+          <li><a href="./offers.html">Offers</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="./login.html">Login</a></li>
+          <li><a href="./signup.html">Signup</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="layout">
+        <div class="product-content">
+          <h1>Featured Deals</h1>
+          <div class="search-container">
+            <div class="search-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+                height="20px"
+                fill="currentColor"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                ></path>
+              </svg>
+            </div>
+            <input
+              type="text"
+              placeholder="Search deals, brands, etc."
+              class="search-input"
+            />
+            <button class="search-button">Search</button>
+          </div>
+        </div>
+
+        <div class="product-container">
+          <ul>
+            <li class="active" data-content="all-deals">
+              <img src="../icons/offers_page_icons/deal.png" />
+              <span>All Deals</span>
+            </li>
+            <li data-content="laptops">
+              <img src="../icons/offers_page_icons/laptop.png" />
+              <span>Laptops</span>
+            </li>
+            <li data-content="headphones">
+              <img src="../icons/offers_page_icons/headphones.png" />
+              <span>Headphones</span>
+            </li>
+            <li data-content="smart-phone">
+              <img src="../icons/offers_page_icons/mobile-app.png" />
+              <span>Smart Phone</span>
+            </li>
+            <li data-content="tv">
+              <img src="../icons/offers_page_icons/smart-tv.png" />
+              <span>TV</span>
+            </li>
+          </ul>
+          <div class="content">
+            <div class="box all-deals">
+              <img src="https://cdn.usegalileo.ai/sdxl10/adbdd00a-bcec-417c-b8f9-208787843acd.png"/>
+              <div class="text">
+                <h4>All Deals</h4>
+                <p>Find the best deals on all products here!</p>
+              </div>
+            </div>
+
+            <div class="box laptops">
+              <img src="img/undraw_planning.svg" alt="Laptops" />
+              <div class="text">
+                <h4>Laptops</h4>
+                <p>Explore our top laptop deals and discounts.</p>
+              </div>
+            </div>
+
+            <div class="box headphones">
+              <img src="img/undraw_production.svg" alt="Headphones" />
+              <div class="text">
+                <h4>Headphones</h4>
+                <p>Check out the latest headphones on sale.</p>
+              </div>
+            </div>
+
+            <div class="box smart-phone">
+              <img src="../img/offers_page_images/realme_gt_6t.jpg" alt="Smart Phone" />
+              <div class="text">
+                <h4>realme GT 6T 5G (Fluid Silver,12GB RAM+256GB Storage) | India's 1st 7+ Gen 3 Flagship Chipset | 1.5M + AnTuTu Score | 5500mAh+120W | The World's Brightest Flagship Display</h4>
+                <p>Find amazing offers on smartphones.</p>
+              </div>
+            </div>
+
+            <div class="box tv">
+              <img src="img/undraw_result.svg" alt="TV" />
+              <div class="text">
+                <h4>TV</h4>
+                <p>Get the best deals on Smart TVs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="previewModal" class="modal">
+          <div class="modal-content">
+              <img id="previewImg" src="" alt="">
+              <h4 id="previewTitle"></h4>
+              <p id="previewDesc"></p>
+          </div>
+      </div>
+
+      </div>
+    </div>
+    <footer>
+      <div class="footer-content">
+          <p>Email: <a href="mailto:balaijielectronics@gmail.com">balaijielectronics@gmail.com</a></p>
+          <p>Phone: <a href="tel:+919503710992">9503710992</a></p>
+          <p>Location: Ap Mirajgaon, Tal Karjat, Dist Ahilyanagar, Pincode: 414202 <a href="https://goo.gl/maps/XYZ" target="_blank"><i class="fas fa-map-marker-alt"></i></a></p>
+          <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+      </div>
+  </footer>
+    <script src="../js/offers.js"></script>
+  </body>
+</html>
