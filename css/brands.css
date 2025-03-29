@@ -391,6 +391,11 @@ body {
   
   }
 
+  .pro-heading{
+    font-size: 27px;
+    font-weight: bold;
+    text-align: center;
+  }
 
   /* card css */
   .container {
@@ -398,6 +403,7 @@ body {
     flex-wrap: wrap;
     gap: 50px;
     justify-content: center;
+    margin-top: 60px;
 }
 
 .product-card {
