@@ -104,9 +104,11 @@ for (var i = 0; i < products.length; i++) {
                 <p class="price">${product.price}</p>
             </div>
             <div class="button-container">
-                <button class="button add-cart">Add to Cart</button>
-                <button class="button buy-now">Buy Now</button>
+                <button class="button add-cart"  onclick="addcart()"><a href="/pages/products.html">Add to Cart</a></button>
+                <button class="button buy-now"  onclick="goToPage()">Buy Now</button>
             </div>
         </div>
     `;
 }
+
+
