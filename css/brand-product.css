@@ -1,7 +1,8 @@
-.container {
+.container-pr {
     display: flex;
     align-items: flex-start;
     margin: 50px;
+    margin-top: 100px;
 }
 
 .main-product-image {
@@ -14,7 +15,7 @@
     margin: 0 29px;
 }
 
-.product-image {
+.product-image-1 {
     width: 93px;
     height: 71px;
     object-fit: cover;
@@ -31,7 +32,7 @@
 
 }
 
-.heading {
+.heading-1 {
     font-size: 25px;
     margin-bottom: 5px;
     font-weight: 100;
@@ -81,10 +82,11 @@
 
 /* media query */
 @media (max-width: 890px) {
-    .container {
+    .container-pr {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        margin-top: 200px;
     }
 
     .main-product-image {
@@ -97,7 +99,7 @@
         gap: 10px;
     }
 
-    .product-image {
+    .product-image-1{
         margin: 0 5px;
     }
 
