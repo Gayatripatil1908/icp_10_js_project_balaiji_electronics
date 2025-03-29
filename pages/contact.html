@@ -46,7 +46,7 @@
         }
 
         .contact-form {
-            background-color: #bb33ff;
+            background-color: #4d4d4d;
             position: relative;
         }
 
@@ -56,26 +56,14 @@
             position: absolute;
         }
 
-        .circle.one {
-            width: 130px;
-            height: 130px;
-            top: 130px;
-            right: -40px;
-        }
-
-        .circle.two {
-            width: 80px;
-            height: 80px;
-            top: 10px;
-            right: 30px;
-        }
+        
 
         .contact-form:before {
             content: "";
             position: absolute;
             width: 26px;
             height: 26px;
-            background-color: #bb33ff;
+            background-color: #4d4d4d;
             transform: rotate(45deg);
             top: 50px;
             left: -13px;
@@ -94,7 +82,7 @@
             font-size: 1.5rem;
             line-height: 1;
             margin-bottom: 0.7rem;
-            color: #bb33ff;
+            color: #4d4d4d;
         }
 
         .input-container {
@@ -148,7 +136,7 @@
             background-color: #fff;
             border: 2px solid #fafafa;
             font-size: 0.95rem;
-            color: #bb33ff;
+            color: #4d4d4d;
             line-height: 1;
             border-radius: 25px;
             outline: none;
@@ -182,7 +170,7 @@
             opacity: 0;
             transition: 0.3s;
             height: 5px;
-            background-color: #bb33ff;
+            background-color: #4d4d4d;
             top: 50%;
             transform: translateY(-50%);
         }
@@ -214,7 +202,7 @@
         }
 
         .contact-info .title {
-            color: #bb33ff;
+            color: #4d4d4d;
         }
 
         .text {
@@ -280,6 +268,27 @@
         .social-icons {
             height: 30px;
         }
+        .back-btn{
+            padding: 0.6rem 1.3rem;
+            background-color: #fff;
+            border: 2px solid #fafafa;
+            font-size: 0.95rem;
+            color: #4d4d4d;
+            line-height: 1;
+            border-radius: 25px;
+            outline: none;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 0;
+            margin-bottom: 10px;
+            position: relative;
+            left: 280px;
+            bottom: 20px;
+        }
+        .back-btn:hover {
+            background-color: transparent;
+            color: #fff;
+        }
 
         @media (max-width: 850px) {
             .form {
@@ -304,11 +313,7 @@
                 height: 350px;
             }
 
-            .big-circle {
-                bottom: 75%;
-                transform: scale(0.9) translate(-40%, 30%);
-                right: 50%;
-            }
+           
 
             .text {
                 margin: 1rem 0 1.5rem 0;
@@ -318,6 +323,7 @@
                 padding: 1.5rem 0 0 0;
             }
         }
+        
 
         @media (max-width: 480px) {
             .container {
@@ -400,25 +406,24 @@
                 <div class="social-media">
                     <p>Connect with us :</p>
                     <div class="social-icons">
+                        <a href="https://www.instagram.com/balaji_sound_system_77?igsh=OGNjcGh5eng5YThm">
+                            <img src="./../icons/instagram.png" class="social-icons" ></img>
+                        </a>
+                        <a href="https://youtube.com/@rushikeshajabe?si=gw0mZDs2TyzztiJN">
+                            <img src="./../icons/youtube.png" class="social-icons"></img>
+                        </a>
                         <a href="#">
                             <img src="./../icons/face-book.png" class="social-icons"></img>
                         </a>
                         <a href="#">
-                            <img src="./../icons/twitter.png" class="social-icons"></img>
-                        </a>
-                        <a href="#">
-                            <img src="./../icons/instagram.png" class="social-icons"></img>
-                        </a>
-                        <a href="#">
-                            <img src="./../icons/youtube.png" class="social-icons"></i>
+                            <img src="./../icons/twitter.png" class="social-icons"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
             <div class="contact-form">
-                <span class="circle one"></span>
-                <span class="circle two"></span>
+               
 
                 <form action="index.html" autocomplete="off">
                     <h3 class="title">Contact us</h3>
@@ -444,9 +449,11 @@
                     </div>
                     <input type="submit" value="Send" class="btn" />
                 </form>
+                <a href="./../index.html"><button class="back-btn">Go Back</button></a>
             </div>
         </div>
     </div>
+    
 
     <script>
 
