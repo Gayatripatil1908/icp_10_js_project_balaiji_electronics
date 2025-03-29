@@ -288,8 +288,9 @@ body {
     border-radius: 12px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
     color: white;
-    background-color: black;
+    background-color: #8e24aa;
     border: 2px solid #fff;
     width: fit-content;
     margin: 10px auto;
@@ -392,7 +393,7 @@ body {
   }
 
   .pro-heading{
-    font-size: 27px;
+       font-size: 27px;
     font-weight: bold;
     text-align: center;
   }
