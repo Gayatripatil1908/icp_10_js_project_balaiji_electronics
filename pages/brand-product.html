@@ -4,8 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product</title>
+    <link rel="stylesheet" href="/css/brand-product.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="product-image-container">
+            <img src="/1.jpg" alt="image" class="product-image" onclick="changeImage('1.jpg')">
+            <img src="/2.jpg" alt="image" class="product-image" onclick="changeImage('2.jpg')">
+            <img src="/3.jpg" alt="image" class="product-image" onclick="changeImage('3.jpg')">
+            <img src="/4.jpg" alt="image" class="product-image" onclick="changeImage('4.jpg')">
+        </div>
+        <img src="/1.jpg" alt="image" class="main-product-image" id="main-product-image">
+        <div class="text-container">
+            <h2 class="heading">Samsung 108 cm (43 inches) 4K Ultra HD Smart LED TV UA43DUE70BKLXL (Black)</h2>
+            <p class="para">Visit the Samsung Store</p>
+            <div class="rating-container">
+                <span>4.0</span>
+                <img src="/rating.png" alt="rating" class="product-rating">
+                <span class="user-rating">4,566 ratings </span>
+            </div>
+            <p class="bought-para"> <b>500+ bought </b> in past month</p>
+
+            <button type="button" class="btn-buy"> Buy </button>
+
+        </div>
+    </div>
+
 </body>
 </html>
