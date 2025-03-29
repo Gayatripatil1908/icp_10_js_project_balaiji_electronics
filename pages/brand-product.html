@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="/css/brand-product.css">
+    <link rel="stylesheet" href="/css/brands.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/pages/products.html">Products</a></li>
+                <li><a href="/pages/bestsellers.html">Best Sellers</a></li>
+                <li><a href="/pages/brands.html">Brands</a></li>
+                <li><a href="/pages/offers.html">Offers</a></li>
+                <li><a href="/pages/services.html">Services</a></li>
+                <li><a href="/pages/about.html">About</a></li>
+                <li><a href="/pages/blog.html">Blog</a></li>
+                <li><a href="/pages/contact.html">Contact</a></li>
+                <li><a href="/pages/login.html">Login</a></li>
+                <li><a href="/pages/signup.html">Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container-pr">
+        <div class="product-image-container">
+            <img src="/img/1.jpg" alt="image" class="product-image-1" onclick="changeImage('/img/1.jpg')">
+            <img src="/img/2.jpg" alt="image" class="product-image-1" onclick="changeImage('/img/2.jpg')">
+            <img src="/img/3.jpg" alt="image" class="product-image-1" onclick="changeImage('/img/3.jpg')">
+            <img src="/img/4.jpg" alt="image" class="product-image-1" onclick="changeImage('/img/4.jpg')">
+        </div>
+        <img src="/img/1.jpg" alt="image" class="main-product-image" id="main-product-image">
+        <div class="text-container">
+            <h2 class="heading-1">SAMSUNG New D Series Brighter Crystal | 4K Vision Pro | Dolby Atmos®/DTS:X®</h2>
+            <p class="para">Visit the Samsung Store</p>
+            <div class="rating-container">
+                <span>4.0</span>
+                <img src="/img/rating.png" alt="rating" class="product-rating">
+                <span class="user-rating">4,566 ratings </span>
+            </div>
+            <p class="bought-para"> <b>500+ bought </b> in past month</p>
+            <p style="font-size: 30px;">-30% <b>₹49,999</b></p>
+            <button type="button" class="btn-buy"> Buy </button>
+
+        </div>
+    </div>
+
+    <div class="line-container ">
+        <div class="line "></div>
+    </div>
+    
+    <div class="pro-heading">RELATED PRODUCTS</div>
+
+    <div class="container" id="product-container"></div>
+
+    <div class="line-container ">
+        <div class="line "></div>
+    </div>
+
+    
+
+
+<script>
+    const productImage = document.getElementById("main-product-image");
+       
+        
+    function changeImage(imageName) {
+        productImage.src = imageName;
+    }
+
+
+
+//  card 
+var products = [
+    {
+        name: "SAMSUNG New D Series Brighter Crystal | 4K Vision Pro | Dolby Atmos®/DTS:X®", 
+        image: "https://sony.scene7.com/is/image/sonyglobalsolutions/TVFY23_UM_Primary_image?$whatshotimage$&fmt=png-alpha",
+        price: "₹49,999",
+        shipping: "Shipped in 3-4 days",
+        badge: "Samsung",
+        url : "/pages/products.html"
+    },
+    {
+        
+        name: "LG UR75 139 cm (55) 4K UHD Smart TV | WebOS 23 | HDR10 Pro",
+        image: "https://www.lg.com/content/dam/channel/wcms/in/images/tvs/55ur7500psc_atr_eail_in_c/55UR7500PSC-450.jpg/jcr:content/renditions/thum-350x350.jpeg",  
+        price: "₹45,000",
+        shipping: "Shipped in 5-7 days",
+        badge: "LG",
+        url : "/pages/products.html"
+    },
+    {
+        name: "SAMSUNG | Galaxy S24 Ultra 5G | (Titanium Yellow, 256 GB) | (12 GB RAM)",
+        image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/5/g/l/-original-imah2yyfxkbhrgbz.jpeg?q=70", 
+        price: "₹89,000",
+        shipping: "Shipped in 5-7 days",
+        badge: "Samsung",
+        url : "/pages/products.html"
+    },
+    {
+        name: "WH-1000XM5 | Wireless Noise Cancelling | Headphones WH-1000XM5",
+        image: "https://www.sony.com/image/6145c1d32e6ac8e63a46c912dc33c5bb?fmt=png-alpha", 
+        price: "₹20,999",
+        shipping: "Shipped in 5-7 days",
+        badge: "Sony",
+        url : "/pages/products.html"
+    },
+    ];
+
+    var productContainer = document.getElementById("product-container");
+
+for (var i = 0; i < products.length; i++) {
+    var product = products[i];
+
+    productContainer.innerHTML += `
+        <div class="product-card ">
+            <span class="badge">${product.badge}</span>
+            <img class="product-image" src="${product.image}" alt="${product.name}">
+            <div class="product-details">
+                <h2 class="product-title">${product.name}</h2>
+                <p class="shipping">${product.shipping}</p>
+                <p class="price">${product.price}</p>
+            </div>
+            <div class="button-container">
+                <button class="button add-cart"  onclick="addcart()">Add to Cart</button>
+                <button class="button buy-now"  onclick="goToPage('${product.url}')">Buy Now</button>
+            </div>
+        </div>
+    `;
+}
+
+function goToPage(url) {
+   window.location.href = url;
+}
+
+function addcart(){
+    alert(`Product added`);
+}
+</script>
+
+
+
+
+
+<footer>
+    <div class="footer-content">
+        <p>Email: <a href="mailto:balaijielectronics@gmail.com">balaijielectronics@gmail.com</a></p>
+        <p>Phone: <a href="tel:+919503710992">9503710992</a></p>
+        <p>Location: Ap Mirajgaon, Tal Karjat, Dist Ahilyanagar, Pincode: 414202 <a href="https://goo.gl/maps/XYZ"
+                target="_blank"><i class="fas fa-map-marker-alt"></i></a></p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

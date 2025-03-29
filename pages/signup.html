@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #cce6ff, #cce6ff);
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        .title {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .input-div {
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .input-div input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            border: none;
+            background: #80c1ff;
+            color: white;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #80c1ff;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        p a {
+            color: #80c1ff;
+            text-decoration: none;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                height: auto;
+                padding: 50px 20px;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .title {
+                font-size: 1.6rem;
+            }
+
+            .input-div input {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                max-width: 90%;
+                padding: 1.5rem;
+            }
+
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .input-div input {
+                font-size: 0.85rem;
+                padding: 10px;
+            }
+
+            .btn {
+                font-size: 0.85rem;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="signup-content">
+            <form id="signup-form">
+                <h2 class="title">Create an Account</h2>
+                <div class="input-div">
+                    <input type="text" id="username" placeholder="Username">
+                </div>
+                <div class="input-div">
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+                <div class="input-div">
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+                <div class="input-div">
+                    <input type="password" id="confirm-password" placeholder="Confirm Password">
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+                <p>Already have an account? <a href="./../pages/login.html">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const signupForm = document.getElementById("signup-form");
+
+            signupForm.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent form submission
+
+                const username = document.getElementById("username").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const password = document.getElementById("password").value.trim();
+                const confirmPassword = document.getElementById("confirm-password").value.trim();
+
+                // Validation
+                if (!username || !email || !password || !confirmPassword) {
+                    alert("Please fill out all fields.");
+                    return;
+                }
+
+                if (!validateEmail(email)) {
+                    alert("Please enter a valid email address.");
+                    return;
+                }
+
+                if (password.length < 6) {
+                    alert("Password must be at least 6 characters long.");
+                    return;
+                }
+
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match.");
+                    return;
+                }
+
+                // Check if user already exists
+                if (localStorage.getItem(email)) {
+                    alert("An account with this email already exists. Please log in.");
+                    return;
+                }
+
+                // Save user data to localStorage
+                const user = { username, email, password };
+                localStorage.setItem(email, JSON.stringify(user));
+
+                alert("Sign-up successful! You can now log in.");
+                window.location.href = "login.html"; // Redirect to login page
+            });
+
+            // Email validation function
+            function validateEmail(email) {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailPattern.test(email);
+            }
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
