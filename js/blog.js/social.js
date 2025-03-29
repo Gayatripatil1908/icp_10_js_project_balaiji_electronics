@@ -21,13 +21,13 @@ newsletterSignupForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const email = emailInput.value.trim();
   if (email) {
-    // Call API to subscribe user to newsletter
+  
     console.log('User subscribed to newsletter');
     emailInput.value = '';
   }
 });
 
-// Social sharing buttons
+
 const socialSharingButtons = document.getElementById('social-sharing-list');
 const facebookButton = socialSharingButtons.children[0].children[0];
 const twitterButton = socialSharingButtons.children[1].children[0];

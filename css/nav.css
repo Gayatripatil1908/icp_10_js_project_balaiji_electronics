@@ -23,7 +23,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 5px 20px;
 }
 
 nav ul li a {
@@ -63,8 +63,8 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 .banner-image{
-    padding-left: 10%;
-    padding-top: 5%;
+    padding-left: ;
+    width: 1300px;
 }
 
 footer {
@@ -72,11 +72,11 @@ footer {
     color: #fff;
     padding: 30px 20px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: auto;
 }
 
@@ -104,6 +104,21 @@ footer {
 .social-icons a:hover {
     color: #007bff;
 }
+.footer_information{
+    margin-right: 80%;
+
+
+}
+.img_mid{
+  padding-left: 40%;
+}
+
+/*
+.home-banner{
+    height: 50px;
+    width: 50px;
+} */
+
 
 @media (max-width: 600px) {
     .social-icons a {
