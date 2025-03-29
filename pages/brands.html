@@ -243,6 +243,27 @@
                 badge: "Limited Stock"
             }
         ];
+        var productContainer = document.getElementById("product-container");
+
+        for (var i = 0; i < products.length; i++) {
+            var product = products[i];
+
+            productContainer.innerHTML += `
+                <div class="product-card">
+                    <span class="badge">${product.badge}</span>
+                    <img class="product-image" src="${product.image}" alt="${product.name}">
+                    <div class="product-details">
+                        <h2 class="product-title">${product.name}</h2>
+                        <p class="shipping">${product.shipping}</p>
+                        <p class="price">${product.price}</p>
+                    </div>
+                    <div class="button-container">
+                        <button class="button add-cart">Add to Cart</button>
+                        <button class="button buy-now">Buy Now</button>
+                    </div>
+                </div>
+            `;
+        }
 
     </script>
     
